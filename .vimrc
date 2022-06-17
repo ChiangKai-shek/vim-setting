@@ -50,3 +50,17 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   set mouse=a
 endif
+
+"let NERDTreeHighlightCursorline=1
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+map <F2> :NERDTreeToggle<CR>
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'vim-airline/vim-airline'
+Plugin 'preservim/nerdtree'
+call vundle#end()
